@@ -6,12 +6,12 @@ module.exports = function makeExchange(currency) {
         };
     } else if (currency > 0) {
         const arr = [50, 25, 10, 5, 1];
-        const lenght = arr.length;
+        const length = arr.length;
         let count;
         let countFirst = '';
         let countSecond = '';
 
-        for (let i = 0; i < lenght; i++) {
+        for (let i = 0; i < length; i++) {
             let flag = true;
             for (let j = i; arr[j] <= currency; j++) {
                 changeCoins(currency, j);
@@ -27,7 +27,7 @@ module.exports = function makeExchange(currency) {
 
         function changeCoins(currency, index) {
             const coins = arr;
-            for (let i = index; i < lenght; i++) {
+            for (let i = index; i < length; i++) {
                 let coin = coins[i];
                 let quantity = Math.floor(currency / coin);
                 let rest = currency % coin;
